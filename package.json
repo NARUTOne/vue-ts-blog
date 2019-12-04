@@ -6,7 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
-    "lint": "vue-cli-service lint --fix"
+    "lint": "vue-cli-service lint --fix --quiet"
   },
   "dependencies": {
     "axhr": "^0.2.0",
@@ -15,6 +15,7 @@
     "enquire-js": "^0.2.1",
     "flo-utils": "^0.2.2",
     "lodash": "^4.17.15",
+    "particles-bg-vue": "^1.1.1",
     "vue": "^2.6.10",
     "vue-class-component": "^7.0.2",
     "vue-property-decorator": "^8.1.0",

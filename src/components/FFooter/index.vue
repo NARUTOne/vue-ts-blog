@@ -1,7 +1,5 @@
 <template>
-  <Footer>
-    FLY's blog ©{{year}} create by NARUTOne
-  </Footer>
+  <Footer> FLY's blog ©{{ year }} create by NARUTOne </Footer>
 </template>
 
 <script lang="ts">
@@ -11,7 +9,7 @@ import { Vue, Component } from "vue-property-decorator";
 export default class FFooter extends Vue {
   private year: number = 2019;
 
-  mounted ():void {
+  mounted(): void {
     this.year = new Date().getFullYear();
   }
 }

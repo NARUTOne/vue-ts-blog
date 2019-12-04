@@ -14,61 +14,61 @@ import {
   Main,
   Footer,
   Avatar,
-
   Row,
   Col,
   Timeline,
   TimelineItem,
   Card,
   Tag,
-
   Form,
   FormItem,
   Input,
   Button,
-
   Message,
   Dialog,
-
   Menu,
   MenuItem,
+  Submenu,
   Dropdown,
   DropdownMenu,
   DropdownItem,
-
   Loading,
-  BackTop
+  Backtop
 } from "element-ui";
-import CollapseTransition from "element-ui/lib/transitions/collapse-transition";
 
 // 按需引用 element 组件
-Vue.component(Container.name, Container);
-Vue.component(Header.name, Header);
-Vue.component(Aside.name, Aside);
-Vue.component(Main.name, Main);
-Vue.component(Footer.name, Footer);
-Vue.component(Avatar.name, Avatar);
-Vue.component(Dialog.name, Dialog);
-Vue.component(Form.name, Form);
-Vue.component(FormItem.name, FormItem);
-Vue.component(Input.name, Input);
-Vue.component(Button.name, Button);
-Vue.component(Message.name, Message);
-Vue.component(Menu.name, Menu);
-Vue.component(MenuItem.name, MenuItem);
-Vue.component(Row.name, Row);
-Vue.component(Col.name, Col);
-Vue.component(Dropdown.name, Dropdown);
-Vue.component(DropdownMenu.name, DropdownMenu);
-Vue.component(DropdownItem.name, DropdownItem);
-Vue.component(CollapseTransition.name, CollapseTransition);
-Vue.component(Timeline.name, Timeline);
-Vue.component(TimelineItem.name, TimelineItem);
-Vue.component(Card.name, Card);
-Vue.component(Tag.name, Tag);
-Vue.component(BackTop.name, BackTop);
+Vue.use(Container);
+Vue.use(Header);
+Vue.use(Aside);
+Vue.use(Main);
+Vue.use(Footer);
+Vue.use(Avatar);
+
+Vue.use(Row);
+Vue.use(Col);
+Vue.use(Timeline);
+Vue.use(TimelineItem);
+Vue.use(Card);
+Vue.use(Tag);
+
+Vue.use(Form);
+Vue.use(FormItem);
+Vue.use(Input);
+Vue.use(Button);
+
+Vue.use(Dialog);
+
+Vue.use(Menu);
+Vue.use(MenuItem);
+Vue.use(Submenu);
+Vue.use(Dropdown);
+Vue.use(DropdownMenu);
+Vue.use(DropdownItem);
+
+Vue.use(Backtop);
 
 Vue.use(Loading.directive);
+
 Vue.prototype.$message = Message;
 Vue.prototype.$loading = Loading.service;
 

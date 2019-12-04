@@ -1,10 +1,16 @@
 <template>
-  <Form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="login-form">
+  <Form
+    :model="ruleForm"
+    :rules="rules"
+    ref="ruleForm"
+    label-width="100px"
+    class="login-form"
+  >
     <FormItem label="用户名" prop="name">
-      <Input v-model="ruleForm.name" placeholder="请输入用户名"></Input>
+      <Input v-model="ruleForm.name" placeholder="请输入用户名" />
     </FormItem>
-     <FormItem label="密码" prop="password">
-      <Input v-model="ruleForm.name" placeholder="请输入密码" show-password></Input>
+    <FormItem label="密码" prop="password">
+      <Input v-model="ruleForm.name" placeholder="请输入密码" show-password />
     </FormItem>
     <FormItem>
       <Button type="primary" @click="submitForm('ruleForm')">确认</Button>
@@ -14,35 +20,31 @@
 </template>
 
 <script lang="ts">
-import {Vue, Component, Prop, Emit} from 'vue-property-decorator';
+import { Vue, Component, Prop, Emit } from "vue-property-decorator";
 
 @Component({})
-export default class Login extends Vue{
+export default class Login extends Vue {
   private FormData: any;
   private ruleForm = {
     name: "",
     password: ""
   };
   private rules = {
-    name: [
-            { required: true, message: '请输入用户名', trigger: 'blur' }
-          ],
-    password: [
-            { required: true, message: '请输入密码', trigger: 'blur' },
-          ],
-  }
+    name: [{ required: true, message: "请输入用户名", trigger: "blur" }],
+    password: [{ required: true, message: "请输入密码", trigger: "blur" }]
+  };
 
   @Emit("onOk")
   private submitForm(formName: string): object {
     this.FormData = this.$refs[formName];
 
     return new Promise((resolve, reject) => {
-      this.FormData.validate((valid:boolean) => {
+      this.FormData.validate((valid: boolean) => {
         if (valid) {
           this.cancelForm(formName);
-          resolve('submit!');
+          resolve("submit!");
         } else {
-          reject('error submit!!');
+          reject("error submit!!");
         }
       });
     });
@@ -60,6 +62,4 @@ export default class Login extends Vue{
 }
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

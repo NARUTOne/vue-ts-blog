@@ -1,6 +1,6 @@
 import Vue from "vue";
-import Vuex, {StoreOptions} from "vuex";
-import {IMobile, RootState} from "./types";
+import Vuex, { StoreOptions } from "vuex";
+import { IMobile, RootState } from "./types";
 import user from "./modules/user";
 
 Vue.use(Vuex);
@@ -16,7 +16,7 @@ const store: StoreOptions<RootState> = {
   },
   state: initPageState,
   mutations: {
-    handleMobileChange (state, payload: IMobile) {
+    handleMobileChange(state, payload: IMobile) {
       state.mobile = payload.mobile;
     }
   },

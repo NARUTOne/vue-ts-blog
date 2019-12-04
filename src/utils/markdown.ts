@@ -3,17 +3,17 @@ const highlight = require("highlight.js");
 const marked = require("marked");
 
 interface topIntf {
-  anchor: string,
-  level: number,
-  text: string
+  anchor: string;
+  level: number;
+  text: string;
 }
 
 interface MarkUtilsIntf {
-  markedCode(data:any): any;
+  markedCode(data: any): any;
 }
 
 const tocObj = {
-  add: function (text:string, level:number):string {
+  add: function(text: string, level: number): string {
     var anchor = `#toc${level}${++this.index}`;
     this.toc.push({ anchor: anchor, level: level, text: text });
     return anchor;
@@ -26,8 +26,8 @@ const tocObj = {
   //   </ul>
   //   <li></li>
   // </ul>
-  toHTML: function ():string {
-    let levelStack:Array<number> = [];
+  toHTML: function(): string {
+    let levelStack: Array<number> = [];
     let result = "";
     const addStartUL = () => {
       result += '<ul class="anchor-ul" id="anchor-fix">';
@@ -35,12 +35,12 @@ const tocObj = {
     const addEndUL = () => {
       result += "</ul>\n";
     };
-    const addLI = (anchor:string, text:string) => {
+    const addLI = (anchor: string, text: string) => {
       result +=
         '<li><a class="toc-link" href="#' + anchor + '">' + text + "<a></li>\n";
     };
 
-    this.toc.forEach(function (item:topIntf) {
+    this.toc.forEach(function(item: topIntf) {
       let levelIndex = levelStack.indexOf(item.level);
       // 没有找到相应level的ul标签，则将li放入新增的ul中
       if (levelIndex === -1) {
@@ -74,16 +74,21 @@ const tocObj = {
 };
 
 class MarkUtils implements MarkUtilsIntf {
-  private rendererMD:any;
+  private rendererMD: any;
   constructor() {
     this.rendererMD = new marked.Renderer();
-    this.rendererMD.heading = function (text: string, level:number) {
+    this.rendererMD.heading = function(text: string, level: number) {
       var anchor = tocObj.add(text, level);
       return `<h${level} id=${anchor}>${text}</h${level}>\n`;
     };
-    this.rendererMD.table = function (header:string, body:string) {
-      return '<table class="table" border="0" cellspacing="0" cellpadding="0">' + header + body + '</table>'
-    }
+    this.rendererMD.table = function(header: string, body: string) {
+      return (
+        '<table class="table" border="0" cellspacing="0" cellpadding="0">' +
+        header +
+        body +
+        "</table>"
+      );
+    };
     highlight.configure({ useBR: true });
     marked.setOptions({
       renderer: this.rendererMD,
@@ -95,13 +100,13 @@ class MarkUtils implements MarkUtilsIntf {
       sanitize: false,
       smartLists: true,
       smartypants: false,
-      highlight: function (code: string) {
+      highlight: function(code: string) {
         return highlight.highlightAuto(code).value;
       }
     });
   }
 
-  async markedCode(data:any) {
+  async markedCode(data: any) {
     if (data) {
       let content = await marked(data);
       let toc = tocObj.toHTML();

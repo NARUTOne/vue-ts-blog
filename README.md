@@ -10,8 +10,10 @@ yarn install
 
 ### Compiles and hot-reloads for development
 
-```npm
+```sh
 yarn serve
+# GUI
+vue ui
 ```
 
 ### Compiles and minifies for production

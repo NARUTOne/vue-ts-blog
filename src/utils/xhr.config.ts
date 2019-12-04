@@ -1,17 +1,17 @@
 import xhr from "axhr";
 import { Message } from "element-ui";
 import config from "./config";
-import {resIntf} from "./interface";
+import { resIntf } from "./interface";
 
-const {apiBaseUrl} = config;
+const { apiBaseUrl } = config;
 let apiUrl = "";
 
 interface xhrOptInterface {
-  baseUrl: string,
-  url: string
+  baseUrl: string;
+  url: string;
 }
 
-xhr.getUrl = (option:xhrOptInterface) => {
+xhr.getUrl = (option: xhrOptInterface) => {
   if (option.baseUrl) {
     apiUrl = option.baseUrl + option.url;
     return {
@@ -71,27 +71,27 @@ xhr.success = (response: resIntf) => {
     isSuccess = false;
   }
   switch (res.code + "") {
-  case "000000":
-    isSuccess = true;
-    break;
-  case "100006":
-    isSuccess = false;
-    break;
-  case "100013":
-    isSuccess = false;
-    break;
-  default:
-    Message({
-      message: res.message || "unknown error",
-      type: "error"
-    });
-    isSuccess = false;
+    case "000000":
+      isSuccess = true;
+      break;
+    case "100006":
+      isSuccess = false;
+      break;
+    case "100013":
+      isSuccess = false;
+      break;
+    default:
+      Message({
+        message: res.message || "unknown error",
+        type: "error"
+      });
+      isSuccess = false;
   }
 
   return isSuccess;
 };
 
-xhr.error = (err:any) => {
+xhr.error = (err: any) => {
   Message({
     message: "服务器开小差！",
     type: "error"

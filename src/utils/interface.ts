@@ -3,7 +3,7 @@
  */
 
 export interface resIntf {
-  code: string,
-  message: string,
-  data: string | object | Array<any>
+  code: string;
+  message: string;
+  data: string | object | Array<any>;
 }

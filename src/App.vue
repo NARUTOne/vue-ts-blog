@@ -1,14 +1,14 @@
 <template>
   <div id="app">
     <router-view />
-    <BackTop></BackTop>
+    <el-backtop></el-backtop>
   </div>
 </template>
 
 <script lang="ts">
 import { Vue } from "vue-property-decorator";
 import Component from "vue-class-component";
-import { Mutation } from 'vuex-class';
+import { Mutation } from "vuex-class";
 import { enquireScreen, unenquireScreen } from "enquire-js";
 
 @Component({})
@@ -17,8 +17,8 @@ export default class App extends Vue {
   private enquireHandler: any = null;
 
   mounted(): void {
-    this.enquireHandler = enquireScreen((mobile:Boolean) => {
-      this.handleMobileChange({mobile});
+    this.enquireHandler = enquireScreen((mobile: Boolean) => {
+      this.handleMobileChange({ mobile });
       if (mobile) {
         var width = window.screen.width;
         window.document.getElementsByTagName("html")[0].style.fontSize =
