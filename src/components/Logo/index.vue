@@ -17,7 +17,7 @@ export default class Logo extends Vue {
   public url: string;
   @Prop({
     type: [String, Number],
-    default: "100"
+    default: 50
   })
   public size: string | number;
 

@@ -10,7 +10,12 @@
         <el-dropdown-item command="register" divided>注册</el-dropdown-item>
       </el-dropdown-menu>
     </el-dropdown>
-    <el-dialog :title="dialogLabel" :visible.sync="visible" width="50%">
+    <el-dialog
+      append-to-body
+      :title="dialogLabel"
+      :visible.sync="visible"
+      width="50%"
+    >
       <template v-if="command == 'login'">
         <Login @onOk="handleOk" @onCancel="handleCancel"></Login>
       </template>
@@ -34,7 +39,7 @@ import Register from "./Register.vue";
 })
 export default class LoginBox extends Vue {
   private visible: boolean = false;
-  private command: string = "login";
+  private command: string = "logout";
 
   // computed
   get dropLabel(): string {

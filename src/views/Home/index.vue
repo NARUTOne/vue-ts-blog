@@ -72,7 +72,6 @@ export default class Home extends Vue {
         width: 500px;
         margin: 0 auto;
       }
-      
     }
   }
   .home-body-mobile {

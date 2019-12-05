@@ -66,7 +66,7 @@ const viewRouter = new Router({
     },
     {
       // 404 置后
-      path: "404",
+      path: "/404",
       name: "404",
       component: NotFound
     },

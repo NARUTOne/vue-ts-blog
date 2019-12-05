@@ -1,36 +1,40 @@
 <template>
-  <Form
+  <el-form
     :model="ruleForm"
     :rules="rules"
     ref="ruleForm"
     label-width="100px"
     class="login-form"
   >
-    <FormItem label="用户名" prop="name">
-      <Input v-model="ruleForm.name" placeholder="请输入用户名" />
-    </FormItem>
-    <FormItem label="密码" prop="password">
-      <Input v-model="ruleForm.name" placeholder="请输入密码" show-password />
-    </FormItem>
-    <FormItem label="邮箱" prop="email">
-      <Input v-model="ruleForm.name" placeholder="请输入邮箱" />
-    </FormItem>
-    <FormItem label="手机" prop="phone">
-      <Input v-model="ruleForm.name" placeholder="请输入手机" />
-    </FormItem>
-    <FormItem label="简介" prop="brief">
-      <Input
+    <el-form-item label="用户名" prop="name">
+      <el-input v-model="ruleForm.name" placeholder="请输入用户名" />
+    </el-form-item>
+    <el-form-item label="密码" prop="password">
+      <el-input
+        v-model="ruleForm.name"
+        placeholder="请输入密码"
+        show-password
+      />
+    </el-form-item>
+    <el-form-item label="邮箱" prop="email">
+      <el-input v-model="ruleForm.name" placeholder="请输入邮箱" />
+    </el-form-item>
+    <el-form-item label="手机" prop="phone">
+      <el-input v-model="ruleForm.name" placeholder="请输入手机" />
+    </el-form-item>
+    <el-form-item label="简介" prop="brief">
+      <el-input
         type="textarea"
         :rows="2"
         v-model="ruleForm.name"
         placeholder="请输入简介"
       />
-    </FormItem>
-    <FormItem>
-      <Button type="primary" @click="submitForm('ruleForm')">确认</Button>
-      <Button @click="handleCancel('ruleForm')">取消</Button>
-    </FormItem>
-  </Form>
+    </el-form-item>
+    <el-form-item class="t-right">
+      <el-button type="primary" @click="submitForm('ruleForm')">确认</el-button>
+      <el-button @click="handleCancel('ruleForm')">取消</el-button>
+    </el-form-item>
+  </el-form>
 </template>
 
 <script lang="ts">

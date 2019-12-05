@@ -65,11 +65,6 @@ body {
   line-height: 1.5;
 }
 
-.wrapper {
-  animation: wrapper--fade .25s cubic-bezier(.455, .03, .515, .955);
-  height: 100vh;
-}
-
 @keyframes wrapper--fade {
   0% {
     opacity: 0;

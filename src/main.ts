@@ -1,4 +1,5 @@
 import Vue from "vue";
+import Component from "vue-class-component";
 import App from "./App.vue";
 import router from "./router";
 import store from "./store/index";
@@ -33,7 +34,8 @@ import {
   DropdownMenu,
   DropdownItem,
   Loading,
-  Backtop
+  Backtop,
+  Popover
 } from "element-ui";
 
 // 按需引用 element 组件
@@ -66,6 +68,7 @@ Vue.use(DropdownMenu);
 Vue.use(DropdownItem);
 
 Vue.use(Backtop);
+Vue.use(Popover);
 
 Vue.use(Loading.directive);
 
@@ -73,6 +76,13 @@ Vue.prototype.$message = Message;
 Vue.prototype.$loading = Loading.service;
 
 Vue.config.productionTip = false;
+
+// https://www.npmjs.com/package/vue-class-component#adding-custom-hooks
+Component.registerHooks([
+  "beforeRouteEnter",
+  "beforeRouteLeave",
+  "beforeRouteUpdate"
+]);
 
 new Vue({
   router,

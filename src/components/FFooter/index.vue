@@ -1,5 +1,7 @@
 <template>
-  <Footer> FLY's blog ©{{ year }} create by NARUTOne </Footer>
+  <el-footer class="footer">
+    FLY's blog ©{{ year }} create by NARUTOne
+  </el-footer>
 </template>
 
 <script lang="ts">
@@ -15,10 +17,10 @@ export default class FFooter extends Vue {
 }
 </script>
 
-<style scoped="scss">
+<style lang="scss" scoped>
 .footer {
   text-align: center;
   padding: 20px;
-  font-weight: bold;
+  font-size: 14px;
 }
 </style>

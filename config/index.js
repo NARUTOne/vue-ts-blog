@@ -15,12 +15,13 @@ module.exports = {
     domain: "dev.blog.narutone.cn",
     host: 3001,
     proxyTable: {
-      "/test/**": {
+      // 代理api
+      "/test": {
         target: "http://192.168.1.7:18709", // 本地
         changeOrigin: true,
         pathRewrite: {}
       }
-    } // 代理api
+    }
   },
   build: {
     buildPath: path.resolve(__dirname, "../dist"), // 打包文件path

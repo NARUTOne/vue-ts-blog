@@ -1,9 +1,9 @@
 <template>
   <div class="fly-nav">
     <template v-if="isMobile">
-      <el-dropdown>
-        <i class="el-icon-menu"></i>
-        <template slot="dropdown">
+      <el-popover>
+        <i slot="reference" class="fly-nav-popover el-icon-menu"></i>
+        <slot>
           <NavMenu
             mode="vertical"
             :dataSource="data"
@@ -12,8 +12,8 @@
             @onOpen="handleOpen"
             @onClose="handleClose"
           />
-        </template>
-      </el-dropdown>
+        </slot>
+      </el-popover>
     </template>
     <template v-else>
       <NavMenu
@@ -100,4 +100,9 @@ export default class Nav extends Vue {
 }
 </script>
 
-<style scoped></style>
+<style scoped lang="scss">
+.fly-nav-popover {
+  font-size: 16px;
+  padding: 22px 0;
+}
+</style>
