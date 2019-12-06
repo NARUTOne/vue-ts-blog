@@ -13,5 +13,7 @@ export const LABELS: string[] = [
   "HTML",
   "CSS",
   "小程序",
-  "网格服务"
+  "网格服务",
+  "可视化",
+  "动效动画"
 ];

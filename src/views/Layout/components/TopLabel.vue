@@ -17,7 +17,7 @@ import vueImg from "assets/vue.png";
 import { LABELS } from "@/mock/label";
 
 @Component({})
-export default class Layout extends Vue {
+export default class TopLabel extends Vue {
   private topSrc: string = "";
   private labels: Array<string> = [];
 

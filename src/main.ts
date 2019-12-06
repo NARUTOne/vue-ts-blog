@@ -3,6 +3,7 @@ import Component from "vue-class-component";
 import App from "./App.vue";
 import router from "./router";
 import store from "./store/index";
+import xhr from "axhr";
 
 import "@/utils/xhr.config";
 
@@ -35,7 +36,8 @@ import {
   DropdownItem,
   Loading,
   Backtop,
-  Popover
+  Popover,
+  Alert
 } from "element-ui";
 
 // 按需引用 element 组件
@@ -69,11 +71,13 @@ Vue.use(DropdownItem);
 
 Vue.use(Backtop);
 Vue.use(Popover);
+Vue.use(Alert);
 
 Vue.use(Loading.directive);
 
 Vue.prototype.$message = Message;
 Vue.prototype.$loading = Loading.service;
+Vue.prototype.$xhr = xhr; // 接口请求  this.$xhr({})
 
 Vue.config.productionTip = false;
 
