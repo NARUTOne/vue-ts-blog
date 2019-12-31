@@ -56,6 +56,8 @@ $hfAddH: 120px;
   }
   .fly-layout-aside {
     padding: 16px;
+    height: calc(100vh - #{$hfAddH});
+    overflow-y: auto;
     border-left: 1px solid #e6e6e6;
   }
 }

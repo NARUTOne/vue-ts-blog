@@ -34,7 +34,4 @@ export default class List extends Vue {
 }
 </script>
 
-<style scoped lang="scss">
-.fly-list {
-}
-</style>
+<style scoped lang="scss"></style>

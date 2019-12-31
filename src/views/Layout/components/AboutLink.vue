@@ -23,6 +23,17 @@
         知乎个人主页：文章、blog
       </a>
     </el-alert>
+    <el-alert type="info" :closable="false">
+      <a
+        href="https://juejin.im/user/599126fd518825484968b5fc"
+        target="_blank"
+        slot="title"
+        class="about-link"
+      >
+        <Logo :size="50" :url="juejinSrc"></Logo>
+        掘金个人主页：文章、blog
+      </a>
+    </el-alert>
     <el-alert type="error" :closable="false">
       <a
         href="https://www.jianshu.com/u/3bf902a64a29"
@@ -42,6 +53,7 @@ import { Component, Vue } from "vue-property-decorator";
 import Logo from "@/components/Logo/index.vue";
 import zhihuImg from "assets/zhihu.png";
 import jianshuImg from "assets/jianshu.png";
+import juejinImg from "assets/juejin.png";
 import githubImg from "assets/github.png";
 
 @Component({
@@ -52,11 +64,13 @@ import githubImg from "assets/github.png";
 export default class AboutLink extends Vue {
   private zhihuSrc: string = "";
   private jianshuSrc: string = "";
+  private juejinSrc: string = "";
   private githubSrc: string = "";
 
   mounted() {
     this.zhihuSrc = zhihuImg;
     this.jianshuSrc = jianshuImg;
+    this.juejinSrc = juejinImg;
     this.githubSrc = githubImg;
   }
 }
