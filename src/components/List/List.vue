@@ -15,19 +15,17 @@
               v-for="(item, i) in listData"
               :key="i"
             >
-              <slot></slot>
               <RenderDom :render="renderItem(item)"></RenderDom>
             </Col>
           </Row>
         </template>
         <template>
           <div v-for="(item, i) in listData" :key="i">
-            <slot></slot>
             <RenderDom :render="renderItem(item)"></RenderDom>
           </div>
         </template>
       </template>
-      <template>
+      <template v-else>
         <slot></slot>
       </template>
     </div>
