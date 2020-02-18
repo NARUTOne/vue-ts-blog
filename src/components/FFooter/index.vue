@@ -1,6 +1,7 @@
 <template>
   <el-footer class="footer">
-    FLY's blog ©{{ year }} create by NARUTOne
+    FLY's blog ©{{ year }} create by NARUTOne.
+    无所不变者，唯独也，吾能为之亦只是抱
   </el-footer>
 </template>
 
