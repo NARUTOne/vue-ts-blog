@@ -1,30 +1,28 @@
 # vue-tc-blog
 
-> 🚀 FLY-blog
+> 🚀 🎨 NARUTOne blog site
 
-## Project setup
+## 项目开发
 
-```npm
+```bash
 yarn install
-```
 
-### Compiles and hot-reloads for development
-
-```sh
 yarn serve
 # GUI
 vue ui
-```
 
-### Compiles and minifies for production
-
-```npm
 yarn build
-```
 
-### Lints and fixes files
-
-```npm
 yarn lint
 ```
 
+## TODO
+
+- [ ] 更多TS特性
+- [ ] vue 3 出来重构
+- [ ] SSR
+- [ ] 结合 github issue blog
+- [ ] koa/express
+- [ ] mongodb
+- [ ] Test
+- [ ] lint
